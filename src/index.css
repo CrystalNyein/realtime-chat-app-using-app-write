@@ -7,6 +7,7 @@
   --borderColor2: rgba(79, 86, 105, 1);
   --textColorMain: #fff;
   --textColorSecondary: rgb(226, 227, 232);
+  --textColorTeriary: rgba(27, 27, 39, 1);
   --themeColorMain: rgba(219, 26, 90, 1);
   --themeColorSecondary: #386fd2;
 }
@@ -70,6 +71,14 @@ textarea {
   outline: none;
   font-size: 18px;
   text-shadow: none !important;
+}
+
+.edit--input[type='text'] {
+  background: transparent;
+  border-bottom: none;
+  padding: 0;
+  color: var(--textColorTeriary);
+  width: 30rem;
 }
 
 /* Button Styling */
@@ -149,10 +158,19 @@ textarea {
   margin: 1em;
 }
 
+.message--owner {
+  align-items: flex-end;
+}
+
 .message--header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.message--owner .message--header {
+  gap: 1rem;
+  flex-direction: row-reverse;
 }
 
 .message--body {
@@ -171,12 +189,22 @@ textarea {
   background-color: var(--secondaryBgColor);
 }
 
+.message--body--edit {
+  background-color: var(--textColorMain);
+}
+
 .message--timestamp {
   margin-left: 1em;
   color: rgb(164, 161, 161);
 }
 
-.delete--btn {
+.icon--wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.delete--btn,
+.edit--btn {
   color: #8db3dd;
   cursor: pointer;
   transition: 0.3s;
@@ -185,4 +213,8 @@ textarea {
 
 .delete--btn:hover {
   color: red;
+}
+
+.edit--btn:hover {
+  color: var(--themeColorSecondary);
 }
